@@ -1,1 +1,6 @@
 wp-config.php
+wp-content/cache/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/themes/nsamr/.sass-cache/
+wp-content/themes/nsamr/config.rb
