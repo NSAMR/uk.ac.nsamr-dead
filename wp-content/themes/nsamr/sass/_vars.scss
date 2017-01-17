@@ -1,0 +1,28 @@
+// Theme Information
+//--------------------------------------------//
+$theme_name: "NSAMR";
+$theme_uri: "#";
+$theme_description: "Theme for NSAMR's website";
+$theme_version: "1.0";
+$theme_author: "Helen Jackson @DeckOfPandas";
+$theme_author_uri: "http://www.helenjackson.co.uk";
+$theme_license: "GPL";
+$theme_tags: "responsive-layout";
+
+
+
+// Icons
+//--------------------------------------------//
+// map *.png icon files
+$icons_sprite: sprite-map( "icons/*.png" ); 
+$icons_sprite2x: sprite-map( "icons@2x/*.png" );
+ 
+// generate the icons sprites
+$sprites_file: sprite-url( $icons_sprite );
+$sprites2x_file: sprties-url( $icons_sprite2x );
+ 
+$sprites_url: url( "images/" + sprite-path( $icons_sprite ) );
+$sprites2x_url: url( "images/" + sprite-path( $icons_sprite2x ) );
+ 
+// list with theme icons file names (found in icons and icons@2x folders)
+$theme_icons: ( "checkmark", "star" );

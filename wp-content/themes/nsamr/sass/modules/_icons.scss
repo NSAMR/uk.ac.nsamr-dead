@@ -1,0 +1,39 @@
+/*! =Icons 
+-------------------------------------------------------------- */
+@if ( length( $theme_icons ) > 0 ) {
+ 
+    .icon {
+        display: inline-block;
+        background: $sprites_url no-repeat;
+    }
+                 
+    @each $icon in $theme_icons {
+         
+        .#{ "icon--" + $icon } {
+             
+            @include sprite_icon( $icon, $icons_sprite );
+        }
+    }
+ 
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+ 
+        .icon {
+            background: $sprites2x_url;
+        }
+ 
+        @each $icon in $theme_icons {
+             
+            .#{ "icon--" + $icon } {
+ 
+                @include retina_sprite_icon( $icon, $icons_sprite2x );
+            }
+        }
+    }
+ 
+}

@@ -1,0 +1,14 @@
+// Icons
+//--------------------------------------------//
+@mixin sprite_icon( $name, $sprite ) {
+     
+    @include sprite-dimensions( $sprite, $name );
+    background-position: sprite-position( $sprite, $name );
+}
+ 
+@mixin retina_sprite_icon( $name, $sprite ) {
+     
+    $pos: sprite-position( $sprite, $name );
+    background-position: nth( $pos, 1 ) nth( $pos, 2 ) / 2;
+    @include background-size( ceil( image-width( sprite-path( $sprite ) ) / 2 ) auto );
+}
