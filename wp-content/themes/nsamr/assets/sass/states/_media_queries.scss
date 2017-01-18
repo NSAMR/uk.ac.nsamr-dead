@@ -1,0 +1,33 @@
+/*! =Media Queries
+-------------------------------------------------------------- */
+ 
+/* 956-768px */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+ 
+}
+ 
+/* 767-480px */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+ 
+}
+ 
+/* 479px */
+@media only screen and (max-width: 479px) {
+ 
+}
+
+@media(min-width:768px){
+    .navbar-nav>li>a {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .navbar-right .dropdown-menu {
+        right: auto;
+        left: auto;
+    }
+    .navbar-brand{
+        line-height: 54px;
+        margin-top: 0px;
+        padding: 0 0 0 0;
+    }
+}

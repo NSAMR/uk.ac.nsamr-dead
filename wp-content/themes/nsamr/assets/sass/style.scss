@@ -1,0 +1,39 @@
+/* Vendor dependencies */
+
+@import "compass";
+
+
+
+/* Authored dependencies */
+
+@import "vars";
+@import "mixins";
+@import "theme_info";
+
+
+
+/* Patterns */
+
+	// BASE
+	@import "base/normalize";
+	@import "base/paint";
+
+	// LAYOUTS
+
+	// MODULES
+	@import "modules/icons";
+	@import "modules/navs";
+	@import "modules/widgets";
+
+	// STATES
+	@import "states/_media_queries";
+
+	// THEMES
+
+
+/* Sections */	
+
+
+
+/* Shame! */	
+	@import "shame";
