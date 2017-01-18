@@ -3,10 +3,12 @@
     border:0px;
     margin: 0px;
     padding:0px 0;
-    .navbar-nav>li>a{
+
+    .navbar-nav>li>a {
+        font-family: $title-font;
         font-weight: 500;
         text-transform: uppercase;
-        font-size:18px;
+        font-size:15px;
         letter-spacing: 1px;
         color: $light;
         &:hover{
@@ -16,26 +18,40 @@
                 color: $midlight;
             }
         }
-	}
-	.navbar-nav>.current-menu-item {
-    	a {
-        	color: $light;
-	        background-color: transparent;
-	        &:hover {
-	        	color: $light;
-	        	background-color: $brand-primary-highlight;
-	        }
-	        &:focus {
-	        	color: $light;
-	        }
-    	}
-	}
+    }
 }
 
-.navbar-brand {
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: $light;
+    background-color: $brand-primary-highlight;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: $light;
+    background-color: $brand-primary-highlight;
+}
+
+.navbar-default .navbar-nav>.current-menu-item>a, .navbar-default .navbar-nav>.current-menu-parent>a, .navbar-default .navbar-nav>.current-menu-item>a:hover, .navbar-default .navbar-nav>.current-menu-item>a:focus {
+    color: $light;
+    background-color: $brand-primary-highlight;
+}
+
+.navbar-brand>img {
+    display: block;
+    height: 110px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-top: 0px;
+    padding-bottom: 30px;
+}
+
+
+
+
+//.navbar-brand {
 	img {
 	    display: block;
 	    margin-top: 2px;
 	    margin-bottom: 2px;
 	}
-}
+//}
