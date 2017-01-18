@@ -21,8 +21,8 @@ $icons_sprite2x: sprite-map( "icons@2x/*.png" );
 $sprites_file: sprite-url( $icons_sprite );
 $sprites2x_file: sprties-url( $icons_sprite2x );
  
-$sprites_url: url( "images/" + sprite-path( $icons_sprite ) );
-$sprites2x_url: url( "images/" + sprite-path( $icons_sprite2x ) );
+$sprites_url: url( "/assets/images/" + sprite-path( $icons_sprite ) );
+$sprites2x_url: url( "/assets/images/" + sprite-path( $icons_sprite2x ) );
  
 // list with theme icons file names (found in icons and icons@2x folders)
 $theme_icons: ( "checkmark", "star" );
