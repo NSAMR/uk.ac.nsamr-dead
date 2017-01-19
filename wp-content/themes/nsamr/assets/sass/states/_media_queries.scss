@@ -18,6 +18,7 @@
 
 @media(min-width:768px){
     .navbar-nav>li>a {
+        line-height: auto;
         padding-top: 30px;
         padding-bottom: 30px;
     }
@@ -26,8 +27,16 @@
         left: auto;
     }
     .navbar-brand{
-        line-height: 54px;
+        line-height: auto;
         margin-top: 0px;
         padding: 0 0 0 0;
+    }
+}
+
+@media(max-width:991px){
+    .navbar-default .nav>li>a {
+        line-height: auto;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 }
