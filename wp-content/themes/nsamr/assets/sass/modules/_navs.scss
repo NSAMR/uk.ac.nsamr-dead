@@ -36,6 +36,12 @@
     background-color: $brand-primary;
 }
 
-.top-bar-light {
-    background-color: $brand-secondary;
+.navbar-brand {
+    height: auto;
+
+    img {
+        height: 80px;
+        width: auto;
+    }
 }
+
