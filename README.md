@@ -33,68 +33,48 @@ Design:
 **Clone nsamr.ac.uk repo**
 
 **Set up WordPress**  
+If on our server:
+* Use Softaculous installer
+* Set the database details to something sensible and write them down
+
 If local:
 * Set up AMP stack (MAMP: https://www.mamp.info/en/ or WAMP)
 * Create local db
 * Open localhost:$port in browser  
 * Set up wordpress
-
-If on remote machine:
-* If there isn’t a database already, create a new one, or ask for one from service provider
-* If there is, make sure you have the details (host, db name, username, password)
-* Open root folder in browser
-* Set up wordpress with db details from step above
-
-**Get latest version of database**
-* Grab the latest backup using script in github/backup_scripts (server password required for SSH)
+* Grab the latest backup using script in github/backup_scripts (you have to add the server's password to this file -- read the commented out section at the top)
 * Restore to your local db so you’re working on the current release
-
-**Set up to install plugins**
 * Create empty directory wp-content/plugins (otherwise installing first plugin will fail)
-* Install and activate plugin “WP Install Profiles”
 
-**Plugins --> Bulk install plugins**
-* Import plugin profiles from magic online thing (TODO: remember the name of this)  
+Both cases:
+* It would be a good idea to add your public key to .ssh/authorized_keys via the filebrowser (either via SSH or in cPanel)
+* Upload Scalia theme's zip file (in gDrive) -- this is a parent of the NSAMR theme so needs to be installed first
+* Upload NSAMR theme's zip file (in gDrive)
+
+**Set up theme**
+* Activate NSAMR theme in Appearance --> Themes
+* Installed all plugins it wants, both required and recommended
+
+**Set up other WordPress plugins**
+* Install and activate plugin “WP Install Profiles”: https://wordpress.org/plugins/install-profiles/
+* Plugins --> Bulk install plugins (in our site's dashboard not the network's dashboard)
+* Import plugin profiles from WPIP
   * Username: nsamr  
   * Install list “dev”  
   * Install list “plugins to use” (just underconstruction and wordfence for now)  
+* Set up important initial plugins:
+  * underconstruction
+    * Activate: on
+    * HTTP 200
+    * Administrator  
+  * WordFence
 
-**Set up important initial plugins**  
-underconstruction
-* Activate: on
-* HTTP 200
-* Administrator  
-WordFence
+**Import template data** (TODO: export our own template site)
+* Tools --> Import --> Scalia Import
 
-**Set up Assan theme** (parent of NSAMR theme, so must be installed first)
-* Activate Assan theme
-* Install and activate required plugins requested by Assan
-
-**Import template data from Assan theme** (TODO: export our own template site)
-* Tools --> Import --> Install WordPress
-* Set user to “assan” (so can delete later…)
-* Check box for Download and import file attachments
-
-**Compile CSS for NSAMR theme**  
-* Navigate to wp-content/themes/nsamr
-* Set up compass: https://code.tutsplus.com/tutorials/a-wordpress-development-process-using-sass-and-compass--cms-21861  
-<pre><code>compass config config.rb</code></pre>
-*	Open config.rb  
-  * Set css_dir to “/”  
-  * Set sass_dir to “assets/sass”  
-  * Set images_dir to “assets/images”  
-  * Set javascripts_dir to “assets/js”  
-  * (Leave http_path as it is)  
-  * Uncomment line 12 (output_style), then recomment after “expanded”  
-  * Uncomment line 18 (line_comments)  
-* Run compass (compass watch)  
-* --> wp-content/themes/nsamr/style.css should be created  
-
-**Activate NSAMR theme in browser**
-
-**Set up how we want**
+**Set up how we want** (TODO: this is for old theme)
 * Set  logo  
-	 * Logo-long-80-168.png  
+  * Logo-long-80-168.png  
 * Set site icon  
   * logo-square-1000.png  
 * Create main menu   
@@ -110,6 +90,23 @@ WordFence
 **Deactivate underconstruction when ready to launch**
 
 **Revel in own brilliance**
+
+## Notes for theme development
+**Compile CSS for NSAMR theme**
+The NSAMR theme uses Sass and SCSS, so you need to set up automagical compilation of style.css file every time you update any of the files
+* Navigate to wp-content/themes/nsamr
+* Set up compass: https://code.tutsplus.com/tutorials/a-wordpress-development-process-using-sass-and-compass--cms-21861  
+<pre><code>compass config config.rb</code></pre>
+* Open config.rb  
+  * Set css_dir to “/”  
+  * Set sass_dir to “assets/sass”  
+  * Set images_dir to “assets/images”  
+  * Set javascripts_dir to “assets/js”  
+  * (Leave http_path as it is)  
+  * Uncomment line 12 (output_style), then recomment after “expanded”  
+  * Uncomment line 18 (line_comments)  
+* Run compass (compass watch)  
+* --> wp-content/themes/nsamr/style.css should be created 
 
 
 ## Misc
